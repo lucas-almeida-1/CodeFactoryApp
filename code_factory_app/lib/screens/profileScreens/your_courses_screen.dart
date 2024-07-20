@@ -1,24 +1,15 @@
-import 'package:code_factory_app/components/courseBox.dart';
-import 'package:code_factory_app/components/navibar.dart';
-import 'package:flutter/material.dart';
-
-<<<<<<< HEAD:code_factory_app/lib/screens/profileScreens/your_courses_screen.dart
 import 'package:code_factory_app/components/course_box.dart';
 import 'package:code_factory_app/components/navbar.dart';
+import 'package:flutter/material.dart';
 
 class YourCoursesScreen extends StatefulWidget {
   const YourCoursesScreen({super.key});
-=======
-class yourCourses extends StatefulWidget {
-  const yourCourses({super.key});
->>>>>>> 9a2f2c4967915af1ef7cb364a7984b885b221e43:code_factory_app/lib/screens/profileScreens/yourCoursesScreen.dart
 
   @override
   State<YourCoursesScreen> createState() => _YourCoursesScreenState();
 }
 
 class _YourCoursesScreenState extends State<YourCoursesScreen> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

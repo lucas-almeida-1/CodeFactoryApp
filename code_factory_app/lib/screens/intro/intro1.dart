@@ -2,13 +2,21 @@ import 'package:code_factory_app/screens/sign/in.dart';
 import 'package:flutter/material.dart';
 import 'package:code_factory_app/components/intro_screen.dart';
 
-class IntroPage extends StatelessWidget {
+class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
 
+  @override
+  State<IntroPage> createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage> {
+  final PageController _pageController = PageController();
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        controller: _pageController,
         children: [
           IntroScreen(
           screenNumber: 1,
