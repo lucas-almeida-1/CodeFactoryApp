@@ -13,13 +13,13 @@ class IntroPage extends StatelessWidget {
           IntroScreen(
           screenNumber: 1,
           imageSource: "assets/images/screen1.png",
-          title: "Bem-vindo ao App",
-          subtitle: "Este é um app incrível com muitas funcionalidades.",
+          title: "Aprenda a qualquer hora \n e em qualquer lugar",
+          subtitle: "Sempre é o momento perfeito para \n passar o tempo dia aprendendo algo \n novo, de qualquer lugar!",
           bottomText: "Próximo",
           nextScreen: () => IntroScreen(
             screenNumber: 2,
             imageSource: "assets/images/screen2.png",
-            title: "Encontre um curso para você",
+            title: "Encontre um curso \n para você",
             subtitle:
                 "O conhecimento não tem fronteiras, nem o seu potencial. Explore um novo universo hoje!",
             bottomText: "Próximo",

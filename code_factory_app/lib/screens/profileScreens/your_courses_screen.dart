@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../Widgets/courseBox.dart';
-import '../Widgets/navibar.dart';
+import 'package:code_factory_app/components/course_box.dart';
+import 'package:code_factory_app/components/navbar.dart';
 
-class yourCourses extends StatefulWidget {
-  const yourCourses({super.key});
+class YourCoursesScreen extends StatefulWidget {
+  const YourCoursesScreen({super.key});
 
   @override
-  State<yourCourses> createState() => _yourCoursesState();
+  State<YourCoursesScreen> createState() => _YourCoursesScreenState();
 }
 
-class _yourCoursesState extends State<yourCourses> {
+class _YourCoursesScreenState extends State<YourCoursesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +33,7 @@ class _yourCoursesState extends State<yourCourses> {
           ),
         ],
       ),
-      bottomNavigationBar: const navibar(),
+      bottomNavigationBar: const Navbar(),
     );
   }
 }

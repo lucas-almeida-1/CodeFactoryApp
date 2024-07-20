@@ -1,14 +1,12 @@
-import 'dart:io';
-
-import 'package:code_factory_app/screens/profileScreens/courses.dart';
-import 'package:code_factory_app/screens/profileScreens/payment.dart';
+import 'package:code_factory_app/screens/profileScreens/no_payment_screen.dart';
 import 'package:code_factory_app/screens/profileScreens/saved.dart';
+import 'package:code_factory_app/screens/profileScreens/your_courses_screen.dart';
+import 'package:code_factory_app/screens/sign/in.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +100,7 @@ class Profile extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const YourCourses()),
+                                  const YourCoursesScreen()),
                         );
                       },
                       splashColor: Colors.grey.withOpacity(0.4),
@@ -176,7 +174,7 @@ class Profile extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) =>
-                                  const Payment()),
+                                  const NoPaymentScreen()),
                         );
                       },
                       splashColor: Colors.grey.withOpacity(0.4),
@@ -209,12 +207,12 @@ class Profile extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: () {
-                        if(Platform.isAndroid){
-                          SystemNavigator.pop();
-                        }
-                        else{
-                          exit(0);
-                        } // Não recomendado. Para IOS, usar exit(0) suspende o app da loja. Aparentemente não devemos ter um botão de sair para IOS. Para seguir as diretrizes, o próprio usuário deve fechar o app manualmente.
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                              const SignIn()),
+                        );
                       },
                       splashColor: Colors.grey.withOpacity(0.4), // Ajuste de cor ao clicar
                       highlightColor: Colors.transparent, // Preenchimento de sombra ao clicar

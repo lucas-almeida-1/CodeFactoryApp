@@ -1,4 +1,4 @@
-import 'package:code_factory_app/screens/profileScreens/courses.dart';
+import 'package:code_factory_app/screens/profileScreens/your_courses_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -129,7 +129,7 @@ class SavedCourses extends StatelessWidget {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const YourCourses()),
+                            builder: (context) => const YourCoursesScreen()),
                     );
                   },
                   style: ElevatedButton.styleFrom(

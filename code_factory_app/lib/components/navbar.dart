@@ -1,14 +1,35 @@
+import 'package:code_factory_app/screens/navScreens/home.dart';
+import 'package:code_factory_app/screens/navScreens/profile.dart';
+import 'package:code_factory_app/screens/navScreens/settings.dart';
 import 'package:flutter/material.dart';
 
-class navibar extends StatefulWidget {
-  const navibar({super.key});
+class Navbar extends StatefulWidget {
+  const Navbar({super.key});
 
   @override
-  State<navibar> createState() => _navibarState();
+  State<Navbar> createState() => _NavbarState();
 }
 
-class _navibarState extends State<navibar> {
+class _NavbarState extends State<Navbar> {
   int currentPageIndex = 0;
+
+  void _navigateToScreen(int index) {
+    setState(() {
+      currentPageIndex = index;
+    });
+    switch (index) {
+      case 0:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+        break;
+      case 1:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
+        break;
+      case 2:
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,11 +43,7 @@ class _navibarState extends State<navibar> {
         NavigationBar(
           shadowColor: Colors.black,
           backgroundColor: Colors.white,
-          onDestinationSelected: (int index) {
-            setState(() {
-              currentPageIndex = index;
-            });
-          },
+          onDestinationSelected: _navigateToScreen,
           selectedIndex: currentPageIndex,
           destinations: const <Widget>[
             NavigationDestination(

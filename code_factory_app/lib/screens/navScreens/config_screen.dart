@@ -1,16 +1,16 @@
-import 'package:code_factory/Widgets/navibar.dart';
+import 'package:code_factory_app/components/navbar.dart';
 import 'package:flutter/material.dart';
 
-import '../Widgets/boxConfig.dart';
+import 'package:code_factory_app/components/box_config.dart';
 
-class configScreen extends StatefulWidget {
-  const configScreen({super.key,required this.title});
+class ConfigScreen extends StatefulWidget {
+  const ConfigScreen({super.key,required this.title});
   final String title;
   @override
-  State<configScreen> createState() => _configScreenState();
+  State<ConfigScreen> createState() => _ConfigScreenState();
 }
 
-class _configScreenState extends State<configScreen> {
+class _ConfigScreenState extends State<ConfigScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class _configScreenState extends State<configScreen> {
                     height: 190,
                   ),
                 ),
-                boxConfig("Notificação", Icons.notifications_rounded, true),
+                const boxConfig("Notificação", Icons.notifications_rounded, true),
                 Container(
                   padding: const EdgeInsets.only(left: 30, top: 10, bottom: 10),
                   alignment: Alignment.centerLeft,
@@ -42,18 +42,18 @@ class _configScreenState extends State<configScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 20)),
                 ),
-                boxConfig("Nome", Icons.manage_accounts, false,
+                const boxConfig("Nome", Icons.manage_accounts, false,
                     subTitulo: "Fulano de tal da Silva"),
-                boxConfig("Email", Icons.mail, false,
+                const boxConfig("Email", Icons.mail, false,
                     subTitulo: "meuemail@email.com"),
-                boxConfig("Senha", Icons.lock, false,
+                const boxConfig("Senha", Icons.lock, false,
                     subTitulo: "alterada a 2 semanas"),
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar: const navibar(),
+      bottomNavigationBar: const Navbar(),
     );
   }
 }

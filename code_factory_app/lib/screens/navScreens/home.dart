@@ -1,5 +1,6 @@
-import 'package:code_factory_app/screens/navScreens/homeCoursesScreens/course_screens.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:code_factory_app/components/navbar.dart';
+import 'package:code_factory_app/screens/navScreens/homeCoursesScreens/product_detail_html.dart';
+import 'package:code_factory_app/screens/navScreens/homeCoursesScreens/product_detail_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -195,7 +196,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CourseScreens()),
+                            builder: (context) => const ProductDetailUI()),
                       );
                     },
                     splashColor: Colors.grey.withOpacity(0.4),
@@ -306,7 +307,7 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const CourseScreens()),
+                                const ProductDetailHTML()),
                       );
                     },
                     splashColor: Colors.grey.withOpacity(0.4),
@@ -415,6 +416,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const Navbar(),
     );
   }
 }

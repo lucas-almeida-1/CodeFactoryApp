@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class noPaymentScreen extends StatefulWidget {
-  const noPaymentScreen({super.key});
+class NoPaymentScreen extends StatefulWidget {
+  const NoPaymentScreen({super.key});
 
   @override
-  State<noPaymentScreen> createState() => _noPaymentScreenState();
+  State<NoPaymentScreen> createState() => _NoPaymentScreenState();
 }
 
-class _noPaymentScreenState extends State<noPaymentScreen> {
+class _NoPaymentScreenState extends State<NoPaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

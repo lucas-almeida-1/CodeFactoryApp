@@ -204,8 +204,8 @@ class _SignUpState extends State<SignUp> {
                                 icon: Icon(
                                   // Alterna o ícone com base no estado
                                   _passwordVisible
-                                      ? Icons.visibility_outlined
-                                      : Icons.visibility_off_outlined,
+                                      ? Icons.visibility_off_outlined
+                                      : Icons.visibility_outlined,
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -261,7 +261,7 @@ class _SignUpState extends State<SignUp> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            const HomeScreen()), // Trocar para a tela do HomeScreen()
+                                            const HomeScreen()),
                                   );
                                 });
                               }

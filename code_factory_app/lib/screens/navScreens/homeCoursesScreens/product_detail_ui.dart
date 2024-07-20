@@ -1,19 +1,20 @@
+import 'package:code_factory_app/screens/profileScreens/no_payment_screen.dart';
 import 'package:flutter/material.dart';
 
-class productDetail extends StatefulWidget {
-  const productDetail({super.key});
+class ProductDetailUI extends StatefulWidget {
+  const ProductDetailUI({super.key});
 
   @override
-  State<productDetail> createState() => _productDetailState();
+  State<ProductDetailUI> createState() => _ProductDetailUIState();
 }
 
-class _productDetailState extends State<productDetail> {
+class _ProductDetailUIState extends State<ProductDetailUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
             centerTitle: true,
-            title: const Text("HTML",
+            title: const Text("UI",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center)),
         body: Padding(
@@ -31,7 +32,7 @@ class _productDetailState extends State<productDetail> {
                       width: 72,
                       height: 24,
                       decoration: ShapeDecoration(
-                          color: Color.fromARGB(255, 101, 170, 234),
+                          color: const Color.fromARGB(255, 101, 170, 234),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16))),
                       child: const Text("R\$ 50",
@@ -48,8 +49,7 @@ class _productDetailState extends State<productDetail> {
                       style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                       textAlign: TextAlign.start),
                   Text("Você pode iniciar uma nova carreira em \n"
-                      "desenvolvimento web mento hoje aprendendo HTML \n"
-                      "e CSS. Tudo que você precisa é de um computador,\n"
+                      "UI hoje. Tudo que você precisa é de um computador,\n"
                       " um pouco de tempo, muita determinação e um \n"
                       "professor em quem você confie.",
                       style: TextStyle(
@@ -78,7 +78,12 @@ class _productDetailState extends State<productDetail> {
                           borderRadius: BorderRadius.circular(16))),
                   child: TextButton(
                     onPressed: () {
-                      print("Botão precionado,");
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                            const NoPaymentScreen()),
+                      );
                     },
                     child: const Text("Adicionar ao carrinho",
                         style: TextStyle(fontSize: 16, color: Colors.white)),
