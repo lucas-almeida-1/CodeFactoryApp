@@ -111,7 +111,7 @@ class _SignUpState extends State<SignUp> {
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "Campo obrigatório";
-                              }
+    }
                               return null;
                             },
                             decoration: const InputDecoration(

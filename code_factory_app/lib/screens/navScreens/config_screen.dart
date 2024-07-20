@@ -1,10 +1,10 @@
 import 'package:code_factory_app/components/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:code_factory_app/components/box_config.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ConfigScreen extends StatefulWidget {
-  final String title;
-  const ConfigScreen({required this.title, super.key});
+  const ConfigScreen({super.key});
 
   @override
   State<ConfigScreen> createState() => _ConfigScreenState();
@@ -16,7 +16,16 @@ class _ConfigScreenState extends State<ConfigScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(widget.title),
+        title: Text(
+          "Configurações",
+          textAlign: TextAlign.center,
+          style: GoogleFonts.rubik(
+            color: const Color.fromARGB(255, 60, 58, 54),
+            fontSize: 24,
+            fontWeight: FontWeight.w500,
+            letterSpacing: -0.5,
+          ),
+        ),
         centerTitle: true,
       ),
       body: ListView(
@@ -32,7 +41,8 @@ class _ConfigScreenState extends State<ConfigScreen> {
                     height: 190,
                   ),
                 ),
-                const boxConfig("Notificação", Icons.notifications_rounded, true),
+                const boxConfig(
+                    "Notificação", Icons.notifications_rounded, true),
                 Container(
                   padding: const EdgeInsets.only(left: 30, top: 10, bottom: 10),
                   alignment: Alignment.centerLeft,
@@ -41,9 +51,9 @@ class _ConfigScreenState extends State<ConfigScreen> {
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 ),
                 const boxConfig("Nome", Icons.manage_accounts, false,
-                    subTitulo: "Fulano de tal da Silva"),
+                    subTitulo: "Juana Antonieta"),
                 const boxConfig("Email", Icons.mail, false,
-                    subTitulo: "meuemail@email.com"),
+                    subTitulo: "juanita123@gmail.com"),
                 const boxConfig("Senha", Icons.lock, false,
                     subTitulo: "alterada a 2 semanas"),
               ],

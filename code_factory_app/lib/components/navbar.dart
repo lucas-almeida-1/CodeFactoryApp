@@ -1,6 +1,6 @@
+import 'package:code_factory_app/screens/navScreens/config_screen.dart';
 import 'package:code_factory_app/screens/navScreens/home.dart';
 import 'package:code_factory_app/screens/navScreens/profile.dart';
-import 'package:code_factory_app/screens/navScreens/settings.dart';
 import 'package:flutter/material.dart';
 
 class Navbar extends StatefulWidget {
@@ -25,7 +25,7 @@ class _NavbarState extends State<Navbar> {
         Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
         break;
       case 2:
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const ConfigScreen()));
         break;
     }
   }
