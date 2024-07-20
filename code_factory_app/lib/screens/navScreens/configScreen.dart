@@ -1,21 +1,18 @@
-import 'package:code_factory/Widgets/navibar.dart';
+import 'package:code_factory_app/components/boxConfig.dart';
+import 'package:code_factory_app/components/navibar.dart';
 import 'package:flutter/material.dart';
 
-import '../Widgets/boxConfig.dart';
-
 class configScreen extends StatefulWidget {
-  const configScreen({super.key,required this.title});
+  const configScreen({super.key, required this.title});
   final String title;
   @override
   State<configScreen> createState() => _configScreenState();
 }
 
 class _configScreenState extends State<configScreen> {
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold
-      (
+    return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(widget.title),
@@ -39,14 +36,14 @@ class _configScreenState extends State<configScreen> {
                   padding: const EdgeInsets.only(left: 30, top: 10, bottom: 10),
                   alignment: Alignment.centerLeft,
                   child: const Text("Informações da conta",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20)),
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                 ),
-                boxConfig("Nome", Icons.manage_accounts, false,
+                const boxConfig("Nome", Icons.manage_accounts, false,
                     subTitulo: "Fulano de tal da Silva"),
-                boxConfig("Email", Icons.mail, false,
+                const boxConfig("Email", Icons.mail, false,
                     subTitulo: "meuemail@email.com"),
-                boxConfig("Senha", Icons.lock, false,
+                const boxConfig("Senha", Icons.lock, false,
                     subTitulo: "alterada a 2 semanas"),
               ],
             ),
@@ -57,5 +54,3 @@ class _configScreenState extends State<configScreen> {
     );
   }
 }
-
-

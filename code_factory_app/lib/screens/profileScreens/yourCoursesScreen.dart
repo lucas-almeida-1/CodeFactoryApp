@@ -1,7 +1,6 @@
+import 'package:code_factory_app/components/courseBox.dart';
+import 'package:code_factory_app/components/navibar.dart';
 import 'package:flutter/material.dart';
-
-import '../Widgets/courseBox.dart';
-import '../Widgets/navibar.dart';
 
 class yourCourses extends StatefulWidget {
   const yourCourses({super.key});
@@ -21,14 +20,24 @@ class _yourCoursesState extends State<yourCourses> {
         ),
         centerTitle: true,
       ),
-      body:ListView(
+      body: ListView(
         children: const <Widget>[
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              course(Color.fromARGB(255, 248, 242, 238),"assets/images/imgYourCourses.png","Flutter","Aplicativos iOS e android avançados","Parou em 1 h 20 min"),
-              course(Color.fromARGB(255, 230, 237, 244),"assets/images/imgYourCourses2.png","Scrum","Curso avançado de organização de projetos","Parou em 1 h 20 min"),
+              course(
+                  Color.fromARGB(255, 248, 242, 238),
+                  "assets/images/imgYourCourses.png",
+                  "Flutter",
+                  "Aplicativos iOS e android avançados",
+                  "Parou em 1 h 20 min"),
+              course(
+                  Color.fromARGB(255, 230, 237, 244),
+                  "assets/images/imgYourCourses2.png",
+                  "Scrum",
+                  "Curso avançado de organização de projetos",
+                  "Parou em 1 h 20 min"),
             ],
           ),
         ],
