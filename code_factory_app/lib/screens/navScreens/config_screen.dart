@@ -17,56 +17,62 @@ class _ConfigScreenState extends State<ConfigScreen> {
       body: ListView(
         children: <Widget>[
           Center(
-            child: SizedBox(
-              width: 375,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    ClipOval(
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: const CircleBorder(),
-                            padding: const EdgeInsets.all(0),
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                            side: const BorderSide(
-                              width: 1,
-                              color: Color.fromARGB(255, 190, 186, 179),
-                            ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 16),
+              child: SizedBox(
+                width: 375,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      ClipOval(
+                        child: Container(
+                          width: 40,
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
                           ),
-                          child: const Icon(Icons.chevron_left),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              shape: const CircleBorder(),
+                              padding: const EdgeInsets.all(0),
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              side: const BorderSide(
+                                width: 1,
+                                color: Color.fromARGB(255, 190, 186, 179),
+                              ),
+                            ),
+                            child: const Icon(Icons.chevron_left),
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 263,
-                      height: 32,
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        "Configurações",
-                        style: GoogleFonts.rubik(
-                          letterSpacing: -0.5,
-                          color: const Color.fromARGB(255, 60, 58, 54),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
+                      SizedBox(
+                        width: 263,
+                        height: 32,
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          "Configurações",
+                          style: GoogleFonts.rubik(
+                            letterSpacing: -0.5,
+                            color: const Color.fromARGB(255, 60, 58, 54),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
+          ),
+          const SizedBox(
+            height: 24,
           ),
           Container(
             color: Colors.white,
@@ -80,28 +86,49 @@ class _ConfigScreenState extends State<ConfigScreen> {
                     height: 190,
                   ),
                 ),
-                const boxConfig(
-                    "Notificação", Icons.notifications_rounded, true),
-                Container(
-                  width: 343,
-                  padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
-                  child:  Text("Informações da conta",
-                      textAlign: TextAlign.left,
-                      style:
-                          GoogleFonts.rubik(fontWeight: FontWeight.bold, fontSize: 20,)),
+                const SizedBox(
+                  height: 16,
                 ),
-                const boxConfig("Nome", Icons.manage_accounts, false,
+                const BoxConfig(
+                    "Notificação", Icons.notifications_rounded, true),
+                const SizedBox(
+                  height: 16,
+                ),
+                SizedBox(
+                  width: 343,
+                  child: Text(
+                    "Informações da conta",
+                    textAlign: TextAlign.left,
+                    style: GoogleFonts.rubik(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const BoxConfig("Nome", Icons.manage_accounts, false,
                     subTitulo: "Juana Antonieta"),
-                const boxConfig("Email", Icons.mail, false,
+                const SizedBox(
+                  height: 16,
+                ),
+                const BoxConfig("Email", Icons.mail, false,
                     subTitulo: "juanita123@gmail.com"),
-                const boxConfig("Senha", Icons.lock, false,
+                const SizedBox(
+                  height: 16,
+                ),
+                const BoxConfig("Senha", Icons.lock, false,
                     subTitulo: "alterada a 2 semanas"),
+                const SizedBox(
+                  height: 16,
+                ),
               ],
             ),
           ),
         ],
       ),
-      bottomNavigationBar:  Navbar(2),
+      bottomNavigationBar: const Navbar(2),
     );
   }
 }

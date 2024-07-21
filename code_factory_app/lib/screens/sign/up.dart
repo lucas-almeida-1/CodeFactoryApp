@@ -253,10 +253,17 @@ class _SignUpState extends State<SignUp> {
                               if (_formKey.currentState!.validate()) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                    content: Text("Processando"),
+                                    content: Text("Processando..."),
+                                    duration: Duration(milliseconds: 1600),
                                   ),
                                 );
                                 Future.delayed(const Duration(seconds: 2), () {
+                                  ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                      content: Text("Cadastro realizado com sucesso! Bem-vindo!"),
+                                      duration: Duration(seconds: 2),
+                                    ),
+                                  );
                                   Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(

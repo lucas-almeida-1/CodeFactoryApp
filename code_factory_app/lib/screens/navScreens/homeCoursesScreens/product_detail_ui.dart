@@ -13,61 +13,52 @@ class _ProductDetailUIState extends State<ProductDetailUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
+      body: Center(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             SizedBox(
               width: 375,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipOval(
-                      child: Container(
-                        width: 40,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            shape: const CircleBorder(),
-                            padding: const EdgeInsets.all(0),
-                            backgroundColor: Colors.white,
-                            foregroundColor: Colors.black,
-                            side: const BorderSide(
-                              width: 1,
-                              color: Color.fromARGB(255, 190, 186, 179),
-                            ),
+              child: Row(
+                children: [
+                  ClipOval(
+                    child: SizedBox(
+                      width: 48,
+                      height: 48,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        style: ElevatedButton.styleFrom(
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(0),
+                          backgroundColor: Colors.white,
+                          foregroundColor: Colors.black,
+                          side: const BorderSide(
+                            width: 1,
+                            color: Color.fromARGB(255, 190, 186, 179),
                           ),
-                          child: const Icon(Icons.chevron_left),
                         ),
+                        child: const Icon(Icons.chevron_left),
                       ),
                     ),
-                    SizedBox(
-                      width: 263,
-                      height: 32,
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        "UI",
-                        style: GoogleFonts.rubik(
-                          letterSpacing: -0.5,
-                          color: const Color.fromARGB(255, 60, 58, 54),
-                          fontSize: 24,
-                          fontWeight: FontWeight.w500,
-                        ),
+                  ),
+                  SizedBox(
+                    width: 263,
+                    height: 32,
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      "UI",
+                      style: GoogleFonts.rubik(
+                        letterSpacing: -0.5,
+                        color: const Color.fromARGB(255, 60, 58, 54),
+                        fontSize: 24,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             Image.asset("assets/images/imgProdDet.png"),
@@ -80,16 +71,20 @@ class _ProductDetailUIState extends State<ProductDetailUI> {
                     width: 72,
                     height: 24,
                     decoration: ShapeDecoration(
-                        color: const Color.fromARGB(255, 101, 170, 234),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16))),
-                    child: Text("R\$ 50",
-                        style: GoogleFonts.rubik(
-                            fontSize: 16,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.center),
-                  )
+                      color: const Color.fromARGB(255, 101, 170, 234),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                    ),
+                    child: Text(
+                      "R\$ 50",
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.rubik(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -98,7 +93,11 @@ class _ProductDetailUIState extends State<ProductDetailUI> {
               children: [
                 Text("Sobre o curso",
                     style: GoogleFonts.rubik(
-                        fontSize: 24, fontWeight: FontWeight.bold),
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -0.5,
+                      color: const Color.fromARGB(255, 60, 58, 54),
+                    ),
                     textAlign: TextAlign.start),
                 Text(
                     "Você pode iniciar uma nova carreira em \n"
@@ -107,42 +106,61 @@ class _ProductDetailUIState extends State<ProductDetailUI> {
                     "professor em quem você confie.",
                     style: GoogleFonts.rubik(
                         fontSize: 14,
+                        fontWeight: FontWeight.w400,
                         color: const Color.fromARGB(255, 60, 58, 54)),
                     textAlign: TextAlign.left),
-                const SizedBox(height: 16,),
-                Text("Duração",
-                    style: GoogleFonts.rubik(
-                        fontSize: 20, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.left),
-                Text("1 h 30 min",
-                    style: GoogleFonts.rubik(
-                        fontSize: 14,
-                        color: const Color.fromARGB(255, 60, 58, 54)),
-                    textAlign: TextAlign.left)
+                const SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  "Duração",
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.rubik(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: -0.5,
+                    color: const Color.fromARGB(255, 60, 58, 54),
+                  ),
+                ),
+                Text(
+                  "1 h 30 min",
+                  textAlign: TextAlign.left,
+                  style: GoogleFonts.rubik(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: const Color.fromARGB(255, 60, 58, 54),
+                  ),
+                ),
               ],
             ),
             Container(
-                width: 343,
-                height: 53,
-                decoration: ShapeDecoration(
-                    color: const Color.fromARGB(255, 227, 86, 42),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16))),
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const NoPaymentScreen()),
-                    );
-                  },
-                  child: Text("Adicionar ao carrinho",
-                      style:
-                          GoogleFonts.rubik(fontSize: 16, color: Colors.white)),
-                ))
-          ],
+              width: 343,
+              height: 53,
+              decoration: ShapeDecoration(
+                  color: const Color.fromARGB(255, 227, 86, 42),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16))),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NoPaymentScreen()),
+                  );
+                },
+                child: Text(
+                  "Adicionar ao carrinho",
+                  style: GoogleFonts.rubik(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: const Color.fromARGB(255, 242, 242, 242),
+                  ),
                 ),
               ),
-        ));
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:code_factory_app/screens/intro/intro1.dart';
+import 'package:code_factory_app/screens/intro/intro_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -17,7 +17,7 @@ class _SplashState extends State<Splash> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const IntroPage(),
+          builder: (context) => const IntroScreen(),
         ),
       );
     });

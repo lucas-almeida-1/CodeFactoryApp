@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 
 class Navbar extends StatefulWidget {
-  Navbar(this.selectedIndex,{super.key});
+  const Navbar(this.selectedIndex,{super.key});
   final int selectedIndex;
   @override
   State<Navbar> createState() => _NavbarState();

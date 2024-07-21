@@ -5,7 +5,7 @@ import 'package:code_factory_app/screens/sign/in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class IntroScreen extends StatefulWidget {
+class Intro extends StatefulWidget {
   final String imageSource;
   final String title;
   final String subtitle;
@@ -13,20 +13,20 @@ class IntroScreen extends StatefulWidget {
   final Widget Function() nextScreen;
   final int screenNumber;
 
-  const IntroScreen(
+  const Intro(
       {required this.imageSource,
-      required this.title,
-      required this.subtitle,
-      required this.bottomText,
-      required this.nextScreen,
-      this.screenNumber = 1,
-      super.key});
+        required this.title,
+        required this.subtitle,
+        required this.bottomText,
+        required this.nextScreen,
+        this.screenNumber = 1,
+        super.key});
 
   @override
-  State<IntroScreen> createState() => _IntroScreenState();
+  State<Intro> createState() => _IntroState();
 }
 
-class _IntroScreenState extends State<IntroScreen> {
+class _IntroState extends State<Intro> {
   double width1 = 16.0, width2 = 6.0, width3 = 6.0;
   Color color1 = const Color.fromARGB(255, 101, 170, 234);
   Color color2 = const Color.fromARGB(255, 213, 212, 212);

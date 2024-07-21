@@ -1,5 +1,5 @@
-import 'package:code_factory_app/screens/splash.dart';
 import 'package:flutter/material.dart';
+import 'package:code_factory_app/screens/splash.dart';
 
 void main() {
   runApp(const MyApp());
