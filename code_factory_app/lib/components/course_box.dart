@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class course extends StatefulWidget {
   const course(this.cor,this.imagem,this.nome,this.descricao,this.tempo,{super.key});
@@ -41,15 +42,15 @@ class _courseState extends State<course> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(widget.tempo,
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 91, 160, 146),
+                        style:  GoogleFonts.rubik(
+                            color: const Color.fromARGB(255, 91, 160, 146),
                             fontSize: 12)),
                     Text(widget.nome,
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 60, 58, 54), fontSize: 24)),
+                        style:  GoogleFonts.rubik(
+                            color: const Color.fromARGB(255, 60, 58, 54), fontSize: 24)),
                     Text(widget.descricao,
-                        style: const TextStyle(
-                            color: Color.fromARGB(255, 60, 58, 54), fontSize: 14)),
+                        style:  GoogleFonts.rubik(
+                            color: const Color.fromARGB(255, 60, 58, 54), fontSize: 14)),
                   ],
                 ),
               ),

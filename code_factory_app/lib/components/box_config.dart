@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class boxConfig extends StatefulWidget {
  final String subTitulo;
@@ -30,36 +31,53 @@ class _boxConfigState extends State<boxConfig> {
           width: 343,
           height: 82,
           child:
-          Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-            Container(
-              width: 32,
-              height: 32,
-              decoration: const ShapeDecoration(
-                  shape: CircleBorder(),
-                  color: Color.fromARGB(255, 101, 170, 234)),
-              child: Icon(
-                color: Colors.white,
-                widget.icone,
-              ),
-            ), //Botão de notificação
-            (widget.subTitulo != "")
-                ? Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(widget.nome,
-                    style: const TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20)),
-                Text(widget.subTitulo,
-                    style: const TextStyle(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 120, 116, 109)))
+                Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    decoration: const ShapeDecoration(
+                        shape: CircleBorder(),
+                        color: Color.fromARGB(255, 101, 170, 234)),
+                    child: Icon(
+                      size: 16,
+                      color: Colors.white,
+                      widget.icone,
+                    ),
+                  ),
+                ), //Botão de notificação
+                (widget.subTitulo != "")
+                    ? Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                      Text(widget.nome,
+                          style:  GoogleFonts.rubik(
+                              fontWeight: FontWeight.bold, fontSize: 20)),
+                      Text(widget.subTitulo,
+                          style:  GoogleFonts.rubik(
+                              fontSize: 14,
+                              color: const Color.fromARGB(255, 120, 116, 109)))
+                                        ],
+                                      ),
+                    )
+                    : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                                        widget.nome,
+                                        style:  GoogleFonts.rubik(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                                      ),
+                    ),
               ],
-            )
-                : Text(
-              widget.nome,
-              style: const TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 20),
             ),
             widget.toogle
                 ? Switch(

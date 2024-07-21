@@ -4,6 +4,7 @@ import 'package:code_factory_app/screens/profileScreens/your_courses_screen.dart
 import 'package:code_factory_app/screens/sign/in.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../components/navbar.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -233,6 +234,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar:  Navbar(1),
     );
   }
 }

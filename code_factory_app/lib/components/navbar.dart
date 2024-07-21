@@ -3,15 +3,17 @@ import 'package:code_factory_app/screens/navScreens/home.dart';
 import 'package:code_factory_app/screens/navScreens/profile.dart';
 import 'package:flutter/material.dart';
 
-class Navbar extends StatefulWidget {
-  const Navbar({super.key});
 
+
+class Navbar extends StatefulWidget {
+  Navbar(this.selectedIndex,{super.key});
+  final int selectedIndex;
   @override
   State<Navbar> createState() => _NavbarState();
 }
 
 class _NavbarState extends State<Navbar> {
-  int currentPageIndex = 0;
+int currentPageIndex= 0;
 
   void _navigateToScreen(int index) {
     setState(() {
@@ -19,12 +21,15 @@ class _NavbarState extends State<Navbar> {
     });
     switch (index) {
       case 0:
+        currentPageIndex = index;
         Navigator.push(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
         break;
       case 1:
+        currentPageIndex = index;
         Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileScreen()));
         break;
       case 2:
+        currentPageIndex = index;
         Navigator.push(context, MaterialPageRoute(builder: (context) => const ConfigScreen()));
         break;
     }
@@ -41,24 +46,21 @@ class _NavbarState extends State<Navbar> {
           topLeft: Radius.circular(16), topRight: Radius.circular(16),),
         child:
         NavigationBar(
-          shadowColor: Colors.black,
+          indicatorColor: Colors.white,
           backgroundColor: Colors.white,
           onDestinationSelected: _navigateToScreen,
-          selectedIndex: currentPageIndex,
-          destinations: const <Widget>[
+          selectedIndex: widget.selectedIndex,
+          destinations:  <Widget>[
             NavigationDestination(
-//selectedIcon: Icon(Icons.book),
-              icon: Icon(Icons.book),
+              icon: Icon(Icons.book,color: (widget.selectedIndex == 0)? const Color.fromARGB(255, 227, 86, 42): const Color.fromARGB(255, 190, 186, 179),),
               label: 'Cursos',
             ),
             NavigationDestination(
-              icon: Badge(child: Icon(Icons.manage_accounts_rounded)),
+              icon: Icon(Icons.manage_accounts_rounded,color: (widget.selectedIndex== 1) ? const Color.fromARGB(255, 227, 86, 42): const Color.fromARGB(255, 190, 186, 179),),
               label: 'Perfil',
             ),
             NavigationDestination(
-              icon: Badge(
-                child: Icon(Icons.settings),
-              ),
+              icon: Icon(Icons.settings,color: (widget.selectedIndex == 2) ? const Color.fromARGB(255, 227, 86, 42): const Color.fromARGB(255, 190, 186, 179),),
               label: 'Configurações',
             ),
           ],

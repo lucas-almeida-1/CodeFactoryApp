@@ -416,7 +416,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: const Navbar(),
+      bottomNavigationBar:   Navbar(0),
     );
   }
 }
